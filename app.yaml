@@ -1,0 +1,54 @@
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+default_expiration: "1d"
+
+handlers:
+- url: /(.*\.html) 
+  static_files: static/\1 
+  upload: static/index.html 
+  
+- url: /(.*\.html) 
+  static_files: static/\1 
+  upload: static/portfolio.html 
+  
+- url: /(.*\.html) 
+  static_files: static/\1 
+  upload: static/typography.html 
+  
+- url: /(.*\.html) 
+  static_files: static/\1 
+  upload: static/contact.html 
+ 
+- url: /images/(.*) 
+  static_files: static/images/\1 
+  upload: static/images/(.*) 
+
+- url: /fonts/(.*) 
+  static_files: static/fonts/\1 
+  upload: static/fonts/(.*)   
+
+- url: /css/(.*) 
+  static_files: static/css/\1 
+  upload: static/css/(.*)  
+  
+- url: /contact/(.*) 
+  static_files: static/contact/\1 
+  upload: static/contact/(.*)  
+  
+- url: /js/(.*) 
+  static_files: static/js/\1 
+  upload: static/js/(.*)  
+  
+- url: /skins/(.*) 
+  static_files: static/skins/\1 
+  upload: static/skins/(.*)  
+
+- url: .*
+  static_files: static/\1 
+  upload: static/index.html 
+  
+libraries:
+- name: webapp2
+  version: "2.5.2"
